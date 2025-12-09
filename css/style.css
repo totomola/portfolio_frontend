@@ -22,9 +22,7 @@ body{
    font-weight: 400;
    font-style: normal;
 }
-.navbar-container{
-  /*display: flex;*/
-}
+
 /*Header, a partir de aca se completan todas las clases del header*/
 .navbar{
   width: 100%;
@@ -42,14 +40,14 @@ body{
   background-color: #000;
   color: #ffff;
   width: 100%;
-  height: 120vh;
+  /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
 }
 .header-design{
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  padding: 1rem 1rem 3rem 1rem;
+  padding: 2rem 1rem 3rem 1rem;
 }
 .subtitle-design{
   flex-direction: column;
@@ -65,8 +63,9 @@ body{
   display: block;
   color: var(--color_principal);
 }
+.p-design/* modificar en tablet y en desktop para ajustarlos*/
 .imagen-design{
-  transform: scale(1.1);
+  /*transform: scale(1.1);*/
   width: 90%;
   display: flex;
   justify-content: center; 
@@ -79,16 +78,59 @@ body{
   object-fit: cover; 
   max-width: 50rem;
 }
+
+/*Escritorio básico*/
 @media (min-width: 660px) {
+
+  .header-navbar {
+    /*height: 70vh;*/
+  }
+  .header-design{
+    flex-direction: row;
+    padding-top: 2rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  .subtitle-design{
+    width: 55%;
+    /*font-size: 3rem;
+    font-weight: 200;*/
+  }
+  /*.span-disign-industrial{
+  font-size: 4rem;
+  font-weight: 800;
+  }*/
+  .imagen-design{
+    width: 45%;
+  }
+  .img-design img{
+    max-height: 60vh;
+  }
   .imagen-design img:hover {
     transform: scale(1.1);
     transition: transform 0.3s;
   }
-  .header-design{flex-direction: row;
-    height: 50vh;
+  
+}
+
+/* Desktop */
+@media (min-width: 1020px) {
+  .subtitle-design{
+    width: 40%;
   }
-  .header-navbar {
-    height: 70vh;
+  .header-design{
+    padding: 0 4rem;
+  }
+  .subtitle-design{
+    font-size: 3rem;
+    font-weight: 200;
+  }
+  .span-disign-industrial{
+  font-size: 4rem;
+  font-weight: 800;
+  }
+  .imagen-design{
+    width: 60%;
   }
 }
 
