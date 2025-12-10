@@ -14,7 +14,11 @@ Alt_4: #968DFC
 /* VARIABLES para la página*/
 :root{
     --color_principal: #1405BD;
-    --color_secundario: #0000; 
+    --color_secundario: #0000;
+    --color_alternativo1: #1A31EA;
+    --color_alternativo2: #4433FA;
+    --color_alternativo3: #4433FA;
+    --color_alternativo4: #968DFC;
 }
 body{
    font-family: "Raleway", sans-serif;
@@ -42,16 +46,36 @@ body{
   width: 100%;
   /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
 }
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* separación del texto */
+  width: 0%;
+  height: 2px; /* grosor de la línea */
+  background-color: var(--color_alternativo1);
+  transition: width 0.3s ease;
+}
+.nav-link:hover {
+  color: var(--color_alternativo1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
 .header-design{
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  padding: 2rem 1rem 3rem 1rem;
+  padding: 2rem 0.5rem 2rem 0.5rem;
 }
 .subtitle-design{
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   padding:0;
 }
 .h2-title{
@@ -59,11 +83,17 @@ body{
   font-size: 1rem;
 }
 .span-disign-industrial{
-  padding: 0%;
+  padding: 0rem;
   display: block;
-  color: var(--color_principal);
+  color: var(--color_alternativo1);
+  font-weight: 800;
+  font-size: 2rem;
 }
-.p-design/* modificar en tablet y en desktop para ajustarlos*/
+.p-design{
+  width: 50%;
+  font-weight: 100;
+
+  } /* modificar en tablet y en desktop para ajustarlos*/
 .imagen-design{
   /*transform: scale(1.1);*/
   width: 90%;
@@ -81,10 +111,9 @@ body{
 
 /*Escritorio básico*/
 @media (min-width: 660px) {
-
-  .header-navbar {
-    /*height: 70vh;*/
-  }
+  /*.header-navbar{
+    height: 70vh;
+  }*/
   .header-design{
     flex-direction: row;
     padding-top: 2rem;
@@ -93,13 +122,13 @@ body{
   }
   .subtitle-design{
     width: 55%;
-    /*font-size: 3rem;
-    font-weight: 200;*/
+    font-size: 2.5rem;
+    font-weight: 200;
   }
-  /*.span-disign-industrial{
-  font-size: 4rem;
+  .span-disign-industrial{
+  font-size: 3.5rem;
   font-weight: 800;
-  }*/
+  }
   .imagen-design{
     width: 45%;
   }
@@ -110,11 +139,24 @@ body{
     transform: scale(1.1);
     transition: transform 0.3s;
   }
-  
 }
 
 /* Desktop */
 @media (min-width: 1020px) {
+  /*Centrado el nombre de la página*/
+  .navbar{
+    position: relative;
+  }
+  .navbar .nombre-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* evita saltos de línea */
+  }
+  /*El menú de navegacoión queda justo donde*/
+  .navbar-brand {
+    position: static;
+  }
   .subtitle-design{
     width: 40%;
   }
@@ -127,7 +169,7 @@ body{
   }
   .span-disign-industrial{
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 900;
   }
   .imagen-design{
     width: 60%;
