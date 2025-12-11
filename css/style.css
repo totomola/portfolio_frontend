@@ -6,7 +6,7 @@ box-sizing: border-box;}
 /* Paletas de colores y sus variaciones 
 Principal: #1405BD
 Alt_1: #0552BD
-Alt_2: #4433FA
+Alt_2: #092CAB
 Alt_3: #4433FA
 Alt_4: #968DFC
 */
@@ -16,7 +16,7 @@ Alt_4: #968DFC
     --color_principal: #1405BD;
     --color_secundario: #0000;
     --color_alternativo1: #1A31EA;
-    --color_alternativo2: #4433FA;
+    --color_alternativo2: #092CAB;
     --color_alternativo3: #4433FA;
     --color_alternativo4: #968DFC;
 }
@@ -198,11 +198,12 @@ body{
 }
 /*SECTION SOBRE MI - Aqui se encuentra todos los estilos de esta sección.*/
 .sobre-mi{
-  padding: 2rem;
+  padding: 2rem; 
+}
+.sobre-mi-wrapper { /*A partir de este si se va a utilizar flexbox.*/
   display: flex;
   flex-direction: column;
-  
-  gap: 1.5rem; /* separación entre el div y el párrafo */
+  gap: 1.5rem;
 }
 .sobre-mi-background{
   background-color: var(--color_alternativo1);
@@ -218,9 +219,15 @@ body{
   border-bottom-right-radius: 2.5rem;
 }
 .sobre-mi-p{
+  padding-top: 2rem;
   text-align: justify;
   text-justify: inter-word;
 }
+.carrousel-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
 .carousel-caption.custom-caption {
     background: rgba(15, 12, 12, 0.368) !important;
     backdrop-filter: blur(6px) !important;
@@ -235,19 +242,64 @@ body{
     overflow: hidden;
 }
 .custom-caption h5 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #fff;
 }
 .custom-caption p {
     font-size: 1rem;
     color: #fff;
+    display: none;
+}
+.aside-container{
+  display:none;
 }
 @media (min-width: 660px) {
-  .sobre-mi-p{
-    width: 50%;
+  .sobre-mi-wrapper {
+    display: flex;
+    flex-direction: row;   /* Con estopuedo poner el Aside al costado! */
+    align-items: flex-start;
+    gap: 2rem;
   }
-  ..carousel-caption.custom-caption {
+  .sobre-mi-content {
+    max-width: 65%;
+    min-width: 55%;
+  }
+  .aside-container{
+    display: block;
+    width: 30%;
+  }
+  .aside-container {
+  background-color: var(--color_alternativo1);
+  padding: 2rem;
+  margin-right: calc(-2rem);
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  min-width: 35%;
+  max-width: 45%;
+  }
+  .p-aside{
+  text-align: justify;
+  text-justify: inter-word;  
+  }
+  .carousel-h3{
+  max-width: 30%;
+  color: var(--color_alternativo1);
+  font-weight: 800;
+  font-size: 2rem;
+  }
+.carrousel-container{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    padding-right: calc(-2rem);
+    padding-left: calc(0rem);
+  }
+  .carousel{
+    width: 70%;
+  }
+  .carousel-caption.custom-caption {
         padding: 10px 15px;
         border-radius: 12px;
         backdrop-filter: blur(10px);
@@ -257,6 +309,7 @@ body{
   }
   .custom-caption p {
         font-size: 0.9rem;
+        display: block;
   }
 }
 
