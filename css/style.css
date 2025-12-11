@@ -221,9 +221,42 @@ body{
   text-align: justify;
   text-justify: inter-word;
 }
+.carousel-caption.custom-caption {
+    background: rgba(15, 12, 12, 0.368) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px;
+    padding: 15px 20px !important;
+    border: 0 solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+.custom-caption h5 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+.custom-caption p {
+    font-size: 1rem;
+    color: #fff;
+}
 @media (min-width: 660px) {
   .sobre-mi-p{
     width: 50%;
+  }
+  ..carousel-caption.custom-caption {
+        padding: 10px 15px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+  }
+  .custom-caption h5 {
+        font-size: 1.3rem;
+  }
+  .custom-caption p {
+        font-size: 0.9rem;
   }
 }
 
