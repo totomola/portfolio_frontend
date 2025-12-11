@@ -27,7 +27,13 @@ body{
    font-style: normal;
 }
 
-/*Header, a partir de aca se completan todas las clases del header*/
+/*HEADER, a partir de aca se completan todas las clases del header*/
+.header-navbar{
+  background-color: #000;
+  color: #ffff;
+  width: 100%;
+  /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
+}
 .navbar{
   width: 100%;
 }
@@ -40,23 +46,40 @@ body{
 .navbar-negro{
   background-color: #000 !important;
 }
-.header-navbar{
-  background-color: #000;
-  color: #ffff;
+.navbar-toggler {
+  padding: 2px 6px;   /* achica el área clickeable */
+  transform: scale(0.9);  /* reduce el tamaño visual */
+}
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar-toggler-icon span {
+  display: block;
   width: 100%;
-  /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
+  height: 2px; /* grosor */
+  background-color: rgb(77, 77, 77); /* color inicial */
+  transition: background-color 0.3s ease;
+}
+.navbar-toggler:hover .navbar-toggler-icon span {
+  background-color: var(--color_alternativo1);
 }
 .nav-link {
   position: relative;
   transition: color 0.3s ease;
 }
 .nav-link::after {
-  content: "";
+  content:"";
   position: absolute;
   left: 0;
-  bottom: -2px; /* separación del texto */
+  bottom: 0px; /* separación del texto */
   width: 0%;
-  height: 2px; /* grosor de la línea */
+  height: 3px; /* grosor de la línea */
   background-color: var(--color_alternativo1);
   transition: width 0.3s ease;
 }
@@ -92,8 +115,7 @@ body{
 .p-design{
   width: 50%;
   font-weight: 100;
-
-  } /* modificar en tablet y en desktop para ajustarlos*/
+} /* modificar en tablet y en desktop para ajustarlos*/
 .imagen-design{
   /*transform: scale(1.1);*/
   width: 90%;
@@ -109,7 +131,7 @@ body{
   max-width: 50rem;
 }
 
-/*Escritorio básico*/
+/*Media Cuery Tablet*/
 @media (min-width: 660px) {
   /*.header-navbar{
     height: 70vh;
@@ -140,8 +162,7 @@ body{
     transition: transform 0.3s;
   }
 }
-
-/* Desktop */
+/* Media Cuery Desktop */
 @media (min-width: 1020px) {
   /*Centrado el nombre de la página*/
   .navbar{
@@ -175,9 +196,36 @@ body{
     width: 60%;
   }
 }
+/*SECTION SOBRE MI - Aqui se encuentra todos los estilos de esta sección.*/
+.sobre-mi{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 1.5rem; /* separación entre el div y el párrafo */
+}
+.sobre-mi-background{
+  background-color: var(--color_alternativo1);
+  height: 5rem;
+  width: calc(5rem * 2.6); /* Ancho = 3 veces el alto */
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  text-align: center;
+  align-content: space-around;
+  margin-left: calc(-2rem); /* lo uso con el mismo valor que el padding del padre para contrarrestarlo */
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+.sobre-mi-p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+@media (min-width: 660px) {
+  .sobre-mi-p{
+    width: 50%;
+  }
+}
 
 
 /*A partir de aca se encontraran las clases que se encuentran en el main*/
-
-/*Primer punto de inflexión, Aqui configuro para que todo lo que sea menor a 320px, se coloque en columna.*/
-
