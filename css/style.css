@@ -246,7 +246,7 @@ body{
     font-weight: 700;
     color: #fff;
 }
-.custom-caption p {
+.custom-caption p{
     font-size: 1rem;
     color: #fff;
     display: none;
@@ -313,5 +313,40 @@ body{
   }
 }
 
-
-/*A partir de aca se encontraran las clases que se encuentran en el main*/
+/* !!!!!!DOCUMENTO MIS-TRABAJOS!!!!!!*/
+.section-mis-trabajos{
+background-color: var(--color_alternativo2);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.mis-trabajos-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.card {
+  width: 100% !important;  
+  max-width: 22rem;         /* Evita que se deformen en desktop */
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+.glass{
+    background: rgba(255, 255, 255, 0.15);  
+    backdrop-filter: blur(10px);            /* Efecto vidrio */
+    -webkit-backdrop-filter: blur(10px);    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 660px){
+  .mis-trabajos-container{
+    flex-direction: row;
+  }
+  .card {
+    width: 18rem !important;
+  }
+}
