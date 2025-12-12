@@ -323,6 +323,11 @@ align-items: center;
 }
 .h2-mis-proyectos{
   color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+}
+.h2-mis-proyectos span{
+color: #968DFC;
 }
 .mis-trabajos-container{
   display: flex;
