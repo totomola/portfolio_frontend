@@ -314,25 +314,35 @@ body{
 }
 
 /* !!!!!!DOCUMENTO MIS-TRABAJOS!!!!!!*/
+
 .section-mis-trabajos{
 background-color: var(--color_alternativo2);
 display: flex;
 flex-direction: column;
 align-items: center;
 }
+.h2-mis-proyectos{
+  color: #fff;
+}
 .mis-trabajos-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 .card {
   width: 100% !important;  
-  max-width: 22rem;         /* Evita que se deformen en desktop */
+  max-width: 22rem; /*Evita deformación en desktop*/
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 .card-img-top {
   width: 100%;
-  height: auto;
+  height: 11.25rem; /* Tamaño fijo */
+  object-fit: cover; /* Mantiene proporciones */
+  border-radius: 10px 10px 0 0
 }
 .glass{
     background: rgba(255, 255, 255, 0.15);  
@@ -342,11 +352,21 @@ align-items: center;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
+.card-title,
+.card-text {
+  font-size: 1rem !important; /* Misma letra mobile y desktop */
+  line-height: 1.3;
+}
 @media (min-width: 660px){
   .mis-trabajos-container{
     flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap; 
+   gap: 1.5rem;
+   max-width: 95%;
   }
   .card {
     width: 18rem !important;
+    height: auto;
   }
 }
