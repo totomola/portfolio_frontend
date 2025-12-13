@@ -1,0 +1,1 @@
+Este es mi Portfolio personal, desarrollado como entrega del curso de Frontend brindado por la plataforma CODERHOUSE. Mi objetivo es desarrollar un proyecto que esteticamente diga mucho sobre mí, acompañado con información que creo importante y que cuenta desde quien soy hasta los trabajos que en realizado en este tiempo. Espero que les guste!
