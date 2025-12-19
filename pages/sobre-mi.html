@@ -19,7 +19,43 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="sobre-mi-container">
+    <!-- Mismo header que mis-trabajos.html. Asi no es repetitivo -->
+    <header class="header-navbar navbar-container">
+        <Section class="header-mis-trabajos">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-md navbar-negro">
+                <div class="container-fluid">
+
+                    <!-- Logo y nombre -->
+                    <a class="navbar-brand d-flex align-items-center " href="#">
+                        <img src="../esset/imagenes_fondo/logo_tm_1.png" alt="Logo" width="35" height="35" class="me-2">
+                        <span class="nombre-logo">Tomas Mola</span>
+                    </a>
+                    <!-- BOTÓN HAMBURGUESA (solo visible en mobile) -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuMobile">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Menú que se abre -->
+                    <div class="collapse navbar-collapse" id="menuMobile">
+                        <ul class="navbar-nav ms-auto text-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/mis-trabajos.html">Trabajos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
     <main class="cv">
 
         <!-- COLUMNA IZQUIERDA -->
@@ -106,6 +142,30 @@
             </section>
 
         </section>
+        <footer class="footer" id="contacto">
+            <div class="footer-container">
+                <div class="footer-icons">
+                    <a href="https://github.com/totomola" target="_blank" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <!-- <div class="footer-whatsapp">
+                    <i class="bi bi-whatsapp"></i>
+                    <h5>+543585413954</h5>
+                </div> -->
+                    <a href="https://wa.me/5493585413954" target="_blank" class="footer-whatsapp"
+                        aria-label="Enviar WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+        </footer>
 
     </main>
 
