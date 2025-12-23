@@ -401,7 +401,7 @@ color: #968DFC;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 .card {
@@ -409,7 +409,6 @@ color: #968DFC;
   max-width: 22rem; /*Evita deformación en desktop*/
   height: 22rem;
   display: flex;
-  flex-direction: column;
   margin-bottom: 1.5rem;
 }
 .card-img-top {
@@ -452,6 +451,30 @@ color: #968DFC;
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
 }
+.marke7-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.roman-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.ismael-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.diego-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
 
 /*CAMBIAR SECCIÓN PARA QUE LAS CARDS QUEDEN EN LA MIRMA AREA Y LOS CAROUSELES QUEDEN DEBAJO,
 1-AGREGAR LOS CAROUSELES DE LOS DEMAS PROYECTOS.
@@ -481,22 +504,10 @@ AGREGAR UNA FOTO MAS DE LA BRONCO.
   display: none;
 }
 @media (min-width: 660px) {
-  .mis-trabajos-container{
-    flex-direction: row;
-   justify-content: center;
-   flex-wrap: wrap; 
-   gap: 1.5rem;
-   max-width: 95%;
-   margin-left: auto;
-    margin-right: auto;
-  }
-  .mis-trabajos-container,
-  .mis-trabajos-container .marke7-cards {
-  width: 100%;
-  }
-  .card {
-    width: 18rem !important;
-    height: auto;
+  
+  .marke7-cards, .roman-cards, 
+  .ismael-cards, .diego-cards {
+    display:none;
   }
   .section-carousel {
   display: none;
@@ -504,9 +515,6 @@ AGREGAR UNA FOTO MAS DE LA BRONCO.
 }
 
 @media (min-width: 1020px) {
-.marke7-cards {
-    display: none;
-}
 .section-carousel {
   width: 100vw;
   display: block;
@@ -667,7 +675,7 @@ body .sobre-mi-container {
   font-size: 0.8rem;
   color: #666;
 }
-
+}
 @media (max-width: 660px) {
   .cv {
     flex-direction: column;
