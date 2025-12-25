@@ -1,20 +1,942 @@
-/* Error: There's already a module with namespace "base".
- *     ,
- * 4   | @use "base/base";
- *     | ================ original @use
- * ... |
- * 6   | @use "base/base";
- *     | ^^^^^^^^^^^^^^^^ new @use
- *     '
- *   scss\main.scss 6:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: There's already a module with namespace \"base\".\a     \2577 \a 4   \2502  @use \"base/base\";\d\a     \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original @use\a... \2502 \a 6   \2502  @use \"base/base\";\d\a     \2502  ^^^^^^^^^^^^^^^^ new @use\a     \2575 \a   scss\\main.scss 6:1  root stylesheet";
+@charset "UTF-8";
+/* Archivo principal SASS */
+/* Por ahora no hay nada */
+/* reset basico de css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Paletas de colores y sus variaciones 
+Principal: #1405BD
+Alt_1: #0552BD
+Alt_2: #092CAB
+Alt_3: #4433FA
+Alt_4: #968DFC
+*/
+/* VARIABLES para la página*/
+:root {
+  --color_principal: #1405BD;
+  --color_secundario: #0000;
+  --color_alternativo1: #1A31EA;
+  --color_alternativo2: #092CAB;
+  --color_alternativo3: #4433FA;
+  --color_alternativo4: #968DFC;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*HEADER, a partir de aca se completan todas las clases del header*/
+.header-navbar {
+  background-color: #000;
+  color: white;
+  width: 100%;
+  /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-brand {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.navbar-negro {
+  background-color: #000 !important;
+}
+
+.navbar-toggler {
+  padding: 2px 6px; /* achica el área clickeable */
+  transform: scale(0.9); /* reduce el tamaño visual */
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-toggler-icon span {
+  display: block;
+  width: 100%;
+  height: 2px; /* grosor */
+  background-color: rgb(77, 77, 77); /* color inicial */
+  transition: background-color 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon span {
+  background-color: var(--color_alternativo1);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px; /* separación del texto */
+  width: 0%;
+  height: 3px; /* grosor de la línea */
+  background-color: var(--color_alternativo1);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color_alternativo1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 0.5rem 2rem 0.5rem;
+}
+
+.subtitle-design {
+  flex-direction: column;
+  width: 90%;
+  padding: 0;
+}
+
+.h2-title {
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.span-disign-industrial {
+  padding: 0rem;
+  display: block;
+  color: var(--color_alternativo1);
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.p-design {
+  width: 50%;
+  font-weight: 100;
+} /* modificar en tablet y en desktop para ajustarlos*/
+.imagen-design {
+  /*transform: scale(1.1);*/
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imagen-design img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 50rem;
+}
+
+/*Media Cuery Tablet*/
+@media (min-width: 660px) {
+  /*.header-navbar{
+    height: 70vh;
+  }*/
+  .header-design {
+    flex-direction: row;
+    padding-top: 2rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  .subtitle-design {
+    width: 55%;
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+  .span-disign-industrial {
+    font-size: 3.5rem;
+    font-weight: 800;
+  }
+  .imagen-design {
+    width: 45%;
+  }
+  .img-design img {
+    max-height: 60vh;
+  }
+  .imagen-design img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+}
+/* Media Cuery Desktop */
+@media (min-width: 1020px) {
+  /*Centrado el nombre de la página*/
+  .navbar {
+    position: relative;
+  }
+  .navbar .nombre-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* evita saltos de línea */
+  }
+  /*El menú de navegación queda justo donde*/
+  .navbar-brand {
+    position: static;
+  }
+  .subtitle-design {
+    width: 40%;
+  }
+  .header-design {
+    padding: 0 4rem;
+  }
+  .subtitle-design {
+    font-size: 3rem;
+    font-weight: 200;
+  }
+  .span-disign-industrial {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  .imagen-design {
+    width: 60%;
+  }
+}
+/*SECTION SOBRE MI - Aqui se encuentra todos los estilos de esta sección.*/
+.sobre-mi {
+  padding: 2rem;
+}
+
+.sobre-mi-wrapper { /*A partir de este si se va a utilizar flexbox.*/
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sobre-mi-background {
+  background-color: var(--color_alternativo1);
+  height: 5rem;
+  width: 13rem; /* Ancho = 3 veces el alto */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  align-content: space-around;
+  margin-left: -2rem; /* lo uso con el mismo valor que el padding del padre para contrarrestarlo */
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+
+.sobre-mi-p {
+  padding-top: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.carrousel-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-caption.custom-caption {
+  background: rgba(15, 12, 12, 0.368) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 16px;
+  padding: 10px 15px !important;
+  border: 0 solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-caption h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.custom-caption p {
+  font-size: 1rem;
+  color: #fff;
+  display: none;
+}
+
+.aside-container {
+  display: none;
+}
+
+@media (min-width: 660px) {
+  .sobre-mi-wrapper {
+    display: flex;
+    flex-direction: row; /* Con estopuedo poner el Aside al costado! */
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .sobre-mi-content {
+    max-width: 65%;
+    min-width: 55%;
+  }
+  .aside-container {
+    display: block;
+    width: 30%;
+  }
+  .aside-container {
+    background-color: var(--color_alternativo1);
+    padding: 2rem;
+    margin-right: -2rem;
+    border-top-left-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    min-width: 35%;
+    max-width: 45%;
+  }
+  .p-aside {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .carousel-h3 {
+    max-width: 30%;
+    color: var(--color_alternativo1);
+    font-weight: 800;
+    font-size: 2rem;
+  }
+  .carrousel-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    padding-right: -2rem;
+    padding-left: 0rem;
+  }
+  .carousel #carouselindex {
+    width: 70%;
+  }
+  .carousel-caption.custom-caption {
+    padding: 10px 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+  .custom-caption h5 {
+    font-size: 1.3rem;
+  }
+  .custom-caption p {
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+/*Sección Footer*/
+.footer {
+  width: 100%;
+  background-color: #000;
+  padding: 2rem 0;
+}
+
+.footer-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--color_alternativo2);
+}
+
+.footer-icons a {
+  color: var(--color_alternativo2);
+  font-size: 2rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.footer-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color_alternativo2);
+}
+
+.footer-whatsapp i {
+  font-size: 2rem;
+}
+
+.footer-whatsapp h5 {
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 320px) {
+  .footer-icons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/* ======!DOCUMENTO MIS-TRABAJOS!======*/
+.header-mis-trabajos {
+  background-color: #fff;
+}
+
+.section-mis-trabajos {
+  background-color: var(--color_alternativo2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h2-mis-proyectos {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.h2-mis-proyectos span {
+  color: #968DFC;
+}
+
+.marke7wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mis-trabajos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 100% !important;
+  max-width: 22rem; /*Evita deformación en desktop*/
+  height: 22rem;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 60%; /* Tamaño fijo */
+  object-fit: cover; /* Mantiene proporciones */
+  border-radius: 10px 10px 0 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); /* Efecto vidrio */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-title,
+.card-text {
+  font-size: 1rem !important; /* Misma letra mobile y desktop */
+  line-height: 1.3;
+}
+
+.card-body {
+  height: 40%;
+  padding: 0.6rem 0.75rem; /* cuerpo más chico */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.card-title {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.1rem;
+}
+
+.card-text {
+  font-size: 0.75rem !important;
+  line-height: 1.2;
+  margin-bottom: 0.1rem;
+}
+
+.card-body .btn {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.marke7-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.roman-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.ismael-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.diego-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.section-carousel {
+  display: none;
+  background-color: var(--color_alternativo2);
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.carousel-desktop {
+  display: none;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+.grid-imagen {
+  display: none;
+}
+
+@media (min-width: 660px) {
+  .marke7-cards, .roman-cards,
+  .ismael-cards, .diego-cards {
+    display: none;
+  }
+  .section-carousel {
+    display: block;
+  }
+  .section-carousel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    justify-items: center;
+  }
+  .carousel-desktop {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    background-color: var(--color_alternativo2);
+  }
+  .carousel-caption.custom-caption {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    background: rgba(56, 52, 52, 0.35);
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    max-width: 420px;
+    text-align: center;
+  }
+}
+@media (min-width: 1020px) {
+  .section-carousel {
+    display: none;
+  }
+  .grid-imagen {
+    display: grid;
+    width: 90vh;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .parent {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 2rem;
+  }
+  .grid-item {
+    overflow: hidden;
+    border-radius: 14px;
+    aspect-ratio: 1/1;
+  }
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .grid-item:hover img {
+    transform: scale(1.08);
+  }
+  .imag-1 {
+    grid-area: 1/1/2/2;
+  }
+  .imag-2 {
+    grid-area: 1/2/2/3;
+  }
+  .imag-3 {
+    grid-area: 1/3/2/4;
+  }
+  .imag-4 {
+    grid-area: 1/4/2/5;
+  }
+  .imag-5 {
+    grid-area: 2/1/3/2;
+  }
+  .imag-6 {
+    grid-area: 3/1/4/2;
+  }
+  .imag-7 {
+    grid-area: 4/1/5/2;
+  }
+  .imag-8 {
+    grid-area: 2/2/4/4;
+  }
+  .imag-9 {
+    grid-area: 5/1/6/3;
+  }
+  .imag-10 {
+    grid-area: 5/3/6/5;
+  }
+  .imag-11 {
+    grid-area: 4/2/5/3;
+  }
+  .imag-12 {
+    grid-area: 4/3/5/4;
+  }
+  .imag-13 {
+    grid-area: 4/4/5/5;
+  }
+  .imag-14 {
+    grid-area: 2/4/4/5;
+  }
+  .imag-14 {
+    aspect-ratio: 2/4;
+  }
+  .imag-9,
+  .imag-10 {
+    aspect-ratio: 2/1;
+  }
+  .modal-img {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+  }
+  .modal-img.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform: scale(0.85) translateZ(0);
+    transition: transform 0.45s ease;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  }
+  .modal-img.active .modal-content {
+    transform: scale(1);
+  }
+  .modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+  }
+}
+/*.section-carousel {
+  width: 100vw;
+  display: block;
+  padding: 4rem 0;
+  overflow: hidden;
+  background-color: var(--color_alternativo2);
+}
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.marke7-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 4rem 0;
+}
+#carouselMisTrabajos #carouselroman{
+  width: 100%;
+  max-width: 1100px; 
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px; /* Todas iguales */
+/* object-fit: contain; /* Imagen completa 
+  background: var(--color_alternativo2);
+}
+.carousel-caption.custom-caption {
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  background: rgba(56, 52, 52, 0.35);
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  max-width: 420px;
+  text-align: center;
+}
+
+/*CAMBIAR SECCIÓN PARA QUE LAS CARDS QUEDEN EN LA MIRMA AREA Y LOS CAROUSELES QUEDEN DEBAJO,
+1-AGREGAR LOS CAROUSELES DE LOS DEMAS PROYECTOS.
+AGREGAR UNA FOTO MAS DE LA BRONCO.
+2-DIVIDIR POR GRUPOS LAS CARDS EN SUBGRUPOS PARA DARLE ORDEN. ok
+3-REORDENAR LOS CAROUSELES, PRIMERO MARKE 7, LUEGO LOS DEMAS PROYECTOS E INDICARLE AL MEDIA QUERYQUE CUANDO PASEN LOS 660px SE DEBEN CREAR LOS CAROUSELES
+4-CAMBIAR EL ID DEL CAROUSEL E INDEPENDIZARLO DEL CAROUSELL DEL INDEX.
+5-ACOMODAR LAS CARD. (FALTA AGREGAR LA IMAGEN DE LA BRONCO Y QUEDA LISTO)*/
+/* ======!DOCUMENTO SOBRE MI!======*/
+body .sobre-mi-container {
+  background: #eaeaea;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cv {
+  display: flex;
+  max-width: 1100px; /* ancho del CV */
+  margin: 4rem auto; /* CENTRADO HORIZONTAL */
+  background: #fff;
+}
+
+/* ===== COLUMNA IZQUIERDA ===== */
+.cv-left {
+  background: var(--color_alternativo3);
+  padding: 2rem 1.5rem;
+  width: 35%;
+  min-width: 280px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.block {
+  margin-bottom: 2rem;
+}
+
+.block-title {
+  background: #000;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  list-style: none;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/*..COLUMNA DERECHA..*/
+.cv-right {
+  padding: 2rem 2.5rem;
+  width: 65%;
+}
+
+.header {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 0.3rem;
+}
+
+.block-right {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  background: #3f3f3f;
+  color: #fff;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.block-right p,
+.block-right ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.block-right ul {
+  padding-left: 1rem;
+}
+
+.skills li {
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+@media (max-width: 660px) {
+  .cv {
+    flex-direction: column;
+    margin: 0;
+    max-width: 100%;
+  }
+  .cv-left,
+  .cv-right {
+    width: 100%;
+  }
+}
+@media print {
+  /* Ocultar lo que NO va en el CV */
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    margin: 0;
+  }
+  /* CV como hoja */
+  .cv {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  /* Mantener columnas */
+  .cv-left {
+    background: #fff; /* gris claro imprimible */
+  }
+  /* Evitar cortes feos */
+  section,
+  .block,
+  .block-right {
+    page-break-inside: avoid;
+  }
+  /* Tipografía optimizada */
+  h1 {
+    font-size: 22pt;
+  }
+  h2 {
+    font-size: 12pt;
+  }
+  h3 {
+    font-size: 11pt;
+  }
+  p, li {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  .block-title,
+  .section-title {
+    background: none;
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  .profile img {
+    width: 140px;
+    height: 140px;
+  }
+}
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
+/*AGREGAR:
+1-NAVEGADOR PARA PODER RETOMAR A LAS ANTERIORES PÁGINAS
+2-MODALES DONDE EXPLIQUEN MAS EN DETALLE LAS TAREAS REALIZADAS Y LAS COSAS
+3-ORDENAR Y REDEFINIR EL CSS PARA QUE ESTE ESCRITO IGUAL QUE EN LAS ANTERIORES PÁGINAS
+4-BUSCAR O TOMAR UNA FOTOGRAFÍA QUE SEA ACORDE PARA AGREGAR A LA ILERA IZQUIERDA */
+
+/*# sourceMappingURL=styles.css.map */

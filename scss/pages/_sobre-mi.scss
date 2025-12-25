@@ -1,0 +1,192 @@
+/* ======!DOCUMENTO SOBRE MI!======*/
+
+body .sobre-mi-container {
+  background: #eaeaea;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cv {
+ display: flex;
+  max-width: 1100px;   /* ancho del CV */
+  margin: 4rem auto;   /* CENTRADO HORIZONTAL */
+  background: #fff;
+}
+
+/* ===== COLUMNA IZQUIERDA ===== */
+.cv-left {
+  background: var(--color_alternativo3);
+  padding: 2rem 1.5rem;
+  width: 35%;
+  min-width: 280px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.block {
+  margin-bottom: 2rem;
+}
+
+.block-title {
+  background: #000;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  list-style: none;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/*..COLUMNA DERECHA..*/
+.cv-right {
+  padding: 2rem 2.5rem;
+  width: 65%;
+}
+
+.header {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 0.3rem;
+}
+
+.block-right {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  background: #3f3f3f;
+  color: #fff;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.block-right p,
+.block-right ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.block-right ul {
+  padding-left: 1rem;
+}
+
+.skills li {
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+@media (max-width: 660px) {
+  .cv {
+    flex-direction: column;
+    margin: 0;
+    max-width: 100%;
+  }
+  .cv-left,
+  .cv-right {
+    width: 100%;
+  }
+}
+
+@media print { 
+  /* Ocultar lo que NO va en el CV */
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    margin: 0;
+  }
+  /* CV como hoja */
+  .cv {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  /* Mantener columnas */
+  .cv-left {
+    background: #fff; /* gris claro imprimible */
+  }
+  /* Evitar cortes feos */
+  section,
+  .block,
+  .block-right {
+    page-break-inside: avoid;
+  }
+  /* Tipografía optimizada */
+  h1 {
+    font-size: 22pt;
+  }
+  h2 {
+    font-size: 12pt;
+  }
+
+  h3 {
+    font-size: 11pt;
+  }
+  p, li {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  .block-title,
+  .section-title {
+    background: none;
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  .profile img {
+    width: 140px;
+    height: 140px;
+  }
+}
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
+/*AGREGAR:
+1-NAVEGADOR PARA PODER RETOMAR A LAS ANTERIORES PÁGINAS
+2-MODALES DONDE EXPLIQUEN MAS EN DETALLE LAS TAREAS REALIZADAS Y LAS COSAS
+3-ORDENAR Y REDEFINIR EL CSS PARA QUE ESTE ESCRITO IGUAL QUE EN LAS ANTERIORES PÁGINAS
+4-BUSCAR O TOMAR UNA FOTOGRAFÍA QUE SEA ACORDE PARA AGREGAR A LA ILERA IZQUIERDA */

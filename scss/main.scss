@@ -3,7 +3,12 @@
 
 @use "base/base";
 @use "base/variables";
-@use "base/base";
+
 @use "layout/header";
 @use "layout/footer";
+
+@use "pages/home";
+@use "pages/sobre-mi";
+@use "pages/mis-trabajos";
+
 @use "components/cards";
