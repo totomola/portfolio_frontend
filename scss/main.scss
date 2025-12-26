@@ -7,10 +7,13 @@
 /* Layout */
 @use "layout/header";
 @use "layout/footer";
+@use "layout/cards-grid";
 
 /* Pages */
 @use "pages/home";
 @use "pages/sobre-mi";
 @use "pages/mis-trabajos";
 
+/* Componentes */
 @use "components/cards";
+@use "components/carousel";

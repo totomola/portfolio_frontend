@@ -1,0 +1,14 @@
+
+@use "../base/variables";
+
+/*Unifico todas las cards con estos parametros.*/
+
+.marke7-cards,
+.roman-cards,
+.ismael-cards,
+.diego-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
