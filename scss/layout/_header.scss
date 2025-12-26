@@ -1,0 +1,172 @@
+/*HEADER, a partir de aca se completan todas las clases del header*/
+
+@use "../base/variables";
+
+.header-navbar {
+  background-color: variables.$color-black;
+  color: variables.$color-white;
+  width: 100%;
+  /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
+}
+.navbar {
+  width: 100%;
+}
+.navbar-brand{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.navbar-negro{
+  background-color: variables.$color-black !important;
+}
+.navbar-toggler {
+  padding: 2px 6px;   /* achica el área clickeable */
+  transform: scale(0.9);  /* reduce el tamaño visual */
+}
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar-toggler-icon span {
+  display: block;
+  width: 100%;
+  height: 2px; /* grosor */
+  background-color: rgb(77, 77, 77); /* color inicial */
+  transition: background-color 0.3s ease;
+}
+.navbar-toggler:hover .navbar-toggler-icon span {
+  background-color: variables.$color-alt-1;
+}
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content:"";
+  position: absolute;
+  left: 0;
+  bottom: 0px; /* separación del texto */
+  width: 0%;
+  height: 3px; /* grosor de la línea */
+  background-color: variables.$color-alt-1;
+  transition: width 0.3s ease;
+}
+.nav-link:hover {
+  color: variables.$color-alt-1;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.header-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 0.5rem 2rem 0.5rem;
+}
+.subtitle-design {
+  flex-direction: column;
+  width: 90%;
+  padding:0;
+}
+.h2-title{
+  flex-direction: column;
+  font-size: 1rem;
+}
+.span-disign-industrial {
+  padding: 0rem;
+  display: block;
+  color: variables.$color-alt-1;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.p-design{
+  width: 50%;
+  font-weight: 100;
+} /* modificar en tablet y en desktop para ajustarlos*/
+.imagen-design {
+  /*transform: scale(1.1);*/
+  width: 90%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  overflow: hidden;
+}
+.imagen-design img {
+  width: 100%;       
+  height: auto;      
+  object-fit: cover; 
+  max-width: 50rem;
+}
+
+/*Media Cuery Tablet*/
+@media (min-width: 660px) {
+  /*.header-navbar{
+    height: 70vh;
+  }*/
+  .header-design {
+    flex-direction: row;
+    padding-top: 2rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  .subtitle-design {
+    width: 55%;
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+  .span-disign-industrial {
+  font-size: 3.5rem;
+  font-weight: 800;
+  }
+  .imagen-design {
+    width: 45%;
+  }
+  .img-design img {
+    max-height: 60vh;
+  }
+  .imagen-design img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+}
+/* Media Cuery Desktop */
+@media (min-width: 1020px) {
+  /*Centrado el nombre de la página*/
+  .navbar{
+    position: relative;
+  }
+  .navbar .nombre-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* evita saltos de línea */
+  }
+  /*El menú de navegación queda justo donde*/
+  .navbar-brand {
+    position: static;
+  }
+  .subtitle-design {
+    width: 40%;
+  }
+  .header-design {
+    padding: 0 4rem;
+  }
+  .subtitle-design {
+    font-size: 3rem;
+    font-weight: 200;
+  }
+  .span-disign-industrial {
+  font-size: 4rem;
+  font-weight: 900;
+  }
+  .imagen-design {
+    width: 60%;
+  }
+}

@@ -1,12 +1,14 @@
 /* Archivo principal SASS */
-/* Por ahora no hay nada */
 
-@use "base/base";
+/* Base */
 @use "base/variables";
+@use "base/base";
 
+/* Layout */
 @use "layout/header";
 @use "layout/footer";
 
+/* Pages */
 @use "pages/home";
 @use "pages/sobre-mi";
 @use "pages/mis-trabajos";

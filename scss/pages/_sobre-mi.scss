@@ -1,5 +1,7 @@
 /* ======!DOCUMENTO SOBRE MI!======*/
 
+@use "../base/variables";
+
 body .sobre-mi-container {
   background: #eaeaea;
   display: flex;
@@ -16,7 +18,7 @@ body .sobre-mi-container {
 
 /* ===== COLUMNA IZQUIERDA ===== */
 .cv-left {
-  background: var(--color_alternativo3);
+  background: variables.$color-alt-3;
   padding: 2rem 1.5rem;
   width: 35%;
   min-width: 280px;
@@ -40,8 +42,8 @@ body .sobre-mi-container {
 }
 
 .block-title {
-  background: #000;
-  color: #fff;
+  background: variables.$color-black;
+  color: variables.$color-white;
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -66,8 +68,8 @@ body .sobre-mi-container {
 }
 
 .header {
-  background: #000;
-  color: #fff;
+  background: variables.$color-black;
+  color: variables.$color-white;
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -89,7 +91,7 @@ body .sobre-mi-container {
 
 .section-title {
   background: #3f3f3f;
-  color: #fff;
+  color: variables.$color-white;
   display: inline-block;
   padding: 0.3rem 1rem;
   font-size: 0.9rem;
@@ -136,7 +138,7 @@ body .sobre-mi-container {
     display: none !important;
   }
   body {
-    background: #fff;
+    background: variables.$color-white;
     margin: 0;
   }
   /* CV como hoja */
@@ -147,7 +149,7 @@ body .sobre-mi-container {
   }
   /* Mantener columnas */
   .cv-left {
-    background: #fff; /* gris claro imprimible */
+    background: variables.$color-white; /* gris claro imprimible */
   }
   /* Evitar cortes feos */
   section,
@@ -173,7 +175,7 @@ body .sobre-mi-container {
   .block-title,
   .section-title {
     background: none;
-    color: #000;
+    color: variables.$color-black;
     border-bottom: 1px solid #000;
   }
   .profile img {
