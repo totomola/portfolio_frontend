@@ -1,6 +1,7 @@
 
 
 @use "../base/variables";
+@use "../base/mixins" as m;
 
 
 .section-carousel {
@@ -35,19 +36,20 @@
     text-align: center;
   }
 
-  @media (min-width: 660px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    justify-items: center;
+  @include m.respond(md) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  justify-items: center;
 
-    .carousel-desktop {
-      display: block;
-      width: 100%;
-    }
+  .carousel-desktop {
+    display: block;
+    width: 100%;
   }
+}
 
-  @media (min-width: 1020px) {
-    display: none;
-  }
+@include m.respond(lg) {
+  display: none;
+}
+  
 }
