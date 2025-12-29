@@ -31,33 +31,64 @@ body .sobre-mi-container {
 }
 
 .profile img {
-  width: 160px;
-  height: 160px;
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   object-fit: cover;
 }
-
+.profile img:hover {
+  transform:scale(1.2);
+  transition: 0.3s ease;
+  color: variables.$color-white;
+}
 .block {
-  margin-bottom: 2rem;
+  margin: 0
 }
 
 .block-title {
   background: variables.$color-black;
   color: variables.$color-white;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
+  width: 80%;
+  margin: 0 0 0 -1.5rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.block-title:hover {
+  transform: translateX(6px);
+  transition: 0.3s ease;
+  color: variables.$color-alt-3;
 }
 
 .contact-list {
+  color: variables.$color-white;
   list-style: none;
-  font-size: 0.85rem;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 1rem;
   line-height: 1.5;
+}
+  
+.contact-list i {
+  font-size: 1.2rem;
+  color:variables.$color-white;
+}
+
+.contact-list li:hover {
+  transform: translateX(6px);
+  transition: 0.3s ease;
+  color: variables.$color-white;
 }
 
 .small-text {
-  font-size: 0.85rem;
+  color: variables.$color-white;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
