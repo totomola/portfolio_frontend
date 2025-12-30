@@ -522,40 +522,44 @@ body .sobre-mi-container {
 
 /*..COLUMNA DERECHA..*/
 .cv-right {
-  padding: 2rem 2.5rem;
+  padding: 0 2rem;
   width: 65%;
 }
 
 .header {
   background: #000;
   color: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 2rem;
 }
 
 .header h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 2px;
+  font-weight: 900;
 }
 
 .header h2 {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0.3rem;
 }
 
-.block-right {
-  margin-bottom: 2rem;
-}
-
 .section-title {
-  background: #3f3f3f;
+  /* estilos heredados visualmente de block-title */
   color: #fff;
-  display: inline-block;
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 0 0.5rem 1rem;
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: 900;
   text-transform: uppercase;
+  text-decoration: none;
+  font-style: normal;
+  /* diferencias propias */
+  background: #3f3f3f;
+  border-radius: 1.5rem;
   margin-bottom: 1rem;
+  display: inline-block;
 }
 
 .block-right p,
@@ -586,6 +590,9 @@ body .sobre-mi-container {
   .cv-left,
   .cv-right {
     width: 100%;
+  }
+  .header {
+    width: 90%;
   }
 }
 @media print {
