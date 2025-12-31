@@ -448,6 +448,7 @@ body .sobre-mi-container {
   padding: 2rem 1.5rem;
   width: 35%;
   min-width: 280px;
+  margin-bottom: 2rem;
 }
 
 .profile {
@@ -549,17 +550,59 @@ body .sobre-mi-container {
   /* estilos heredados visualmente de block-title */
   color: #fff;
   padding: 0.5rem 0 0.5rem 1rem;
-  width: 70%;
+  width: 95%;
   font-size: 1.5rem;
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
   font-style: normal;
   /* diferencias propias */
-  background: #3f3f3f;
+  background: #4433FA;
   border-radius: 1.5rem;
   margin-bottom: 1rem;
   display: inline-block;
+}
+
+.experience-item {
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.section-title:hover {
+  transition: 0.3s ease;
+  color: #000;
+}
+
+.experience-important {
+  width: 60%;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+
+.experience-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  background: #fff;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.experience-item:hover .experience-detail {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .block-right p,
@@ -593,6 +636,14 @@ body .sobre-mi-container {
   }
   .header {
     width: 90%;
+  }
+  .experience-detail {
+    display: none;
+  }
+}
+@media (min-width: 660px) {
+  .section-title {
+    width: 50%;
   }
 }
 @media print {
