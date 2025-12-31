@@ -106,6 +106,10 @@ body .sobre-mi-container {
   margin-bottom: 2rem;
 }
 
+.header strong {
+  color: variables.$color-alt-3;
+}
+
 .header h1 {
   font-size: 3rem;
   letter-spacing: 2px;
@@ -191,9 +195,63 @@ body .sobre-mi-container {
   padding-left: 1rem;
 }
 
+.skills-main {
+  flex: column;
+  width: 100%;
+}
+
+.skills-design{
+  width: 50%;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-frontend{
+  width: 50%;
+  list-style: none;
+  padding: 0;
+}
+
+.skills {
+  width: 90%;
+  list-style: none;
+  padding: 0;
+}
 .skills li {
+  margin-bottom: 1rem;
   font-weight: bold;
 }
+
+.skills span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background: variables.$color-alt-3;
+  border-radius: 8px;
+  transition: width 0.6s ease;
+}
+
+.level-90 { width: 90%; }
+.level-80 { width: 80%; }
+.level-70 { width: 70%; }
+.level-60 { width: 60%; }
+.level-50 { width: 50%; }
+.level-40 { width: 40%; }
+.level-30 { width: 30%; }
+.level-20 { width: 20%; }
+.level-10 { width: 10%; }
 
 .date {
   font-size: 0.8rem;
@@ -222,7 +280,13 @@ body .sobre-mi-container {
   .section-title {
     width: 50%;
   }
+  .skills-main {
+  display: flex;
+  flex: column;
+  width: 100%;
+  }
 }
+
 @media print { 
   /* Ocultar lo que NO va en el CV */
   header,
