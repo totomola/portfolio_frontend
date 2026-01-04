@@ -31,7 +31,6 @@
 .carrousel-container {
     display: flex;
     flex-direction: column;
-    
   }
 .carousel-caption.custom-caption {
     background: rgba(15, 12, 12, 0.368) !important;
@@ -89,30 +88,38 @@
   text-align: justify;
   text-justify: inter-word;  
   }
-  .carousel-h3 {
-  max-width: 30%;
+  
+.carousel-container {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-left: calc(0rem);
+    margin-right: -2rem 
+  }
+
+  .carousel-complement {
+  flex: 0 0 40%;
+  max-width: 40%;
   color: variables.$color-alt-1;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 2rem;
   }
-.carrousel-container {
-    display: flex;
-    flex-direction: row;
-    padding-top: 2rem;
-    padding-right: calc(-2rem);
-    padding-left: calc(0rem);
+
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
   }
-  .carousel #carouselindex {
-    width: 70%;
-  }
+
   .carousel-caption.custom-caption {
         padding: 10px 15px;
         border-radius: 12px;
         backdrop-filter: blur(10px);
   }
+  
   .custom-caption h5 {
         font-size: 1.3rem;
   }
+
   .custom-caption p {
         font-size: 0.9rem;
         display: block;

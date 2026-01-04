@@ -141,8 +141,9 @@ body {
 }
 
 .p-design {
-  width: 50%;
+  width: 60%;
   font-weight: 100;
+  text-justify: inter-word;
 } /* modificar en tablet y en desktop para ajustarlos*/
 .imagen-design {
   /*transform: scale(1.1);*/
@@ -389,21 +390,23 @@ body {
     text-align: justify;
     text-justify: inter-word;
   }
-  .carousel-h3 {
-    max-width: 30%;
+  .carousel-container {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    margin-right: -2rem;
+  }
+  .carousel-complement {
+    flex: 0 0 40%;
+    max-width: 40%;
     color: #1A31EA;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 2rem;
   }
-  .carrousel-container {
-    display: flex;
-    flex-direction: row;
-    padding-top: 2rem;
-    padding-right: -2rem;
-    padding-left: 0rem;
-  }
-  .carousel #carouselindex {
-    width: 70%;
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
   }
   .carousel-caption.custom-caption {
     padding: 10px 15px;
@@ -560,6 +563,22 @@ body .sobre-mi-container {
   display: inline-block;
 }
 
+.list-curso {
+  padding: 0;
+  margin: 0;
+}
+.list-curso li {
+  list-style: decimal;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.list-curso i {
+  flex-shrink: 0;
+  color: #4433FA;
+}
+
 .experience-item {
   display: flex;
   align-items: stretch;
@@ -608,10 +627,6 @@ body .sobre-mi-container {
   line-height: 1.6;
 }
 
-.block-right ul {
-  padding-left: 1rem;
-}
-
 .skills-main {
   width: 100%;
 }
@@ -632,7 +647,7 @@ body .sobre-mi-container {
   width: 90%;
   list-style: none;
   padding: 0;
-  margin: 0.5rem -1rem;
+  margin: 0.5rem 0rem;
 }
 
 .skills li {

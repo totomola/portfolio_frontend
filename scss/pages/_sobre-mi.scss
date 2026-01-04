@@ -140,6 +140,24 @@ body .sobre-mi-container {
   display: inline-block;
 }
 
+.list-curso {
+  padding: 0;
+  margin: 0;
+  
+  li {
+    list-style:decimal;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  i {
+    flex-shrink: 0;
+    color: variables.$color-alt-3;
+  }
+}
+
 .experience-item {
   display: flex;
   align-items: stretch;
@@ -191,10 +209,6 @@ body .sobre-mi-container {
   line-height: 1.6;
 }
 
-.block-right ul {
-  padding-left: 1rem;
-}
-
 .skills-main {
    width: 100%;
 }
@@ -215,7 +229,7 @@ body .sobre-mi-container {
   width: 90%;
   list-style: none;
   padding: 0;
-  margin: 0.5rem -1rem;
+  margin: 0.5rem 0rem;
 }
 .skills li {
   margin-bottom: 1rem;
