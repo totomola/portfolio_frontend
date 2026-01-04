@@ -4,42 +4,43 @@
 
 .card {
   width: 100% !important;  
-  max-width: 22rem; /*Evita deformación en desktop*/
-  height: 22rem;
+  max-width: 18rem; /*Evita deformación en desktop*/
+  height: 18rem;
   display: flex;
   margin-bottom: 1.5rem;
-}
 
-.card-img-top {
-  width: 100%;
-  height: 60%; /* Tamaño fijo */
-  object-fit: cover; /* Mantiene proporciones */
-  border-radius: 10px 10px 0 0
-}
+  &-img-top {
+    width: 100%;
+    height: 60%; /* Tamaño fijo */
+    object-fit: cover; /* Mantiene proporciones */
+    border-radius: 10px 10px 0 0
+  }
 
-.card-body {
-  height: 40%;
-  padding: 0.6rem 0.75rem; /* cuerpo más chico */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.4rem;
-}
+  &-body {
+    height: 40%;
+    padding: 0.6rem 0.75rem; /* cuerpo más chico */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.4rem;
 
-.card-title {
-  font-size: 0.9rem !important;
-  margin-bottom: 0.1rem;
-}
+      .btn {
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;  
+    }
+  }
 
-.card-text {
-  font-size: 0.75rem !important;
-  line-height: 1.2;
-  margin-bottom: 0.1rem;
-}
+  &-title {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.1rem;
+  }
 
-.card-body .btn {
-  padding: 0.25rem 0.6rem;
-  font-size: 0.75rem;
+  &-text {
+    font-size: 0.75rem !important;
+    line-height: 1.2;
+    margin-bottom: 0.1rem;
+  }
+
 }
 
 /*Variables visuales de mis cards*/
@@ -58,4 +59,5 @@
   font-size: 1rem !important; /* Misma letra mobile y desktop */
   line-height: 1.3;
 }
+
 
