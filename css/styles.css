@@ -233,44 +233,37 @@ body {
   background-color: #000;
   padding: 2rem 0;
 }
-
 .footer-container {
   max-width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
-
 .footer-icons {
   display: flex;
   align-items: center;
   gap: 2rem;
   color: #092CAB;
 }
-
 .footer-icons a {
   color: #1A31EA;
   font-size: 2rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .footer-icons a:hover {
   color: #fff;
   transform: scale(1.1);
   opacity: 0.8;
 }
-
 .footer-whatsapp {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #092CAB;
 }
-
 .footer-whatsapp i {
   font-size: 2rem;
 }
-
 .footer-whatsapp h5 {
   color: #fff;
   margin: 0;

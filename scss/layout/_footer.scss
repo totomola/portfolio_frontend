@@ -6,55 +6,57 @@
   width: 100%;
   background-color: variables.$color-black;
   padding: 2rem 0;
-}
+  
+  &-container{
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 
-.footer-container {
-  max-width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
+  &-icons{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: variables.$color-alt-2;
 
-.footer-icons {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: variables.$color-alt-2;
-}
+    a {
+      color: variables.$color-alt-1;
+      font-size: 2rem;
+      transition: transform 0.3s ease, opacity 0.3s ease;
 
-.footer-icons a {
-  color: variables.$color-alt-1;
-  font-size: 2rem;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+      &:hover {
+        color: variables.$color-white;
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+  }
 
-.footer-icons a:hover {
-  color: variables.$color-white;
-  transform: scale(1.1);
-  opacity: 0.8;
-}
+  &-whatsapp{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: variables.$color-alt-2;
 
-.footer-whatsapp {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: variables.$color-alt-2;
-}
+    i {
+      font-size: 2rem;
+    }
 
-.footer-whatsapp i {
-  font-size: 2rem;
-}
-
-.footer-whatsapp h5 {
-  color: variables.$color-white;
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 400;
+    h5 {
+      color: variables.$color-white;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
 }
 
 @media (max-width: 320px) {
-  .footer-icons {
+  .footer {
+  &-icons {
     flex-direction: column;
     gap:0.5rem;
   }
+}
 }
