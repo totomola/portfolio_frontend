@@ -14,55 +14,110 @@ body .sobre-mi-container {
   max-width: 1100px;   /* ancho del CV */
   margin: 4rem auto;   /* CENTRADO HORIZONTAL */
   background: #fff;
-}
 
-/* ===== COLUMNA IZQUIERDA ===== */
-.cv-left {
+  /* ===== COLUMNA IZQUIERDA ===== */
+  &-left {
   background: variables.$color-alt-3;
   padding: 2rem 1.5rem;
   width: 35%;
   min-width: 280px;
   margin-bottom: 2rem;
+  
+   .profile {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 2rem;
+    
+    img {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: 0.3s ease;
+        
+      &:hover {
+        transform:scale(1.2);  
+        color: variables.$color-white;
+      }
+    }
+  }
+ }
+ 
+ &-right {
+  padding: 0 2rem;
+  width: 65%;
+ }
 }
 
-.profile {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.profile img {
-  width: 15rem;
-  height: 15rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.profile img:hover {
-  transform:scale(1.2);
-  transition: 0.3s ease;
-  color: variables.$color-white;
-}
 .block {
-  margin: 0
+  margin: 0;
+  
+  &-title {
+    background: variables.$color-black;
+    color: variables.$color-white;
+    width: 80%;
+    margin-left: -1.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border-radius: 0 1.5rem 1.5rem 0;
+    transition: 0.3s ease;
+
+    &:hover {
+    transform: translateX(6px);
+    color: variables.$color-alt-3;
+    }
+  }
 }
 
-.block-title {
-  background: variables.$color-black;
-  color: variables.$color-white;
-  width: 80%;
-  margin: 0 0 0 -1.5rem;
-  padding: 0.5rem 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  border-bottom-right-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+.block-right {
+  p,
+  ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
 
-.block-title:hover {
-  transform: translateX(6px);
-  transition: 0.3s ease;
-  color: variables.$color-alt-3;
+.experience-item {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  
+  .experience-important {
+    width: 60%;
+    cursor: pointer;
+  }
+
+  .experience-detail {
+    position: absolute;
+    top: 0;
+    right: -0;
+    width: 40%;
+    background: #fff;
+    color: #000;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.8rem;
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  &:hover {
+      .experience-detail {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+  }
 }
 
 .contact-list {
@@ -72,17 +127,17 @@ body .sobre-mi-container {
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
-}
   
-.contact-list i {
+  &-i {
   font-size: 1.2rem;
   color:variables.$color-white;
-}
+  }  
 
-.contact-list li:hover {
+  &-li:hover {
   transform: translateX(6px);
   transition: 0.3s ease;
   color: variables.$color-white;
+  }
 }
 
 .small-text {
@@ -94,10 +149,7 @@ body .sobre-mi-container {
 }
 
 /*..COLUMNA DERECHA..*/
-.cv-right {
-  padding: 0 2rem;
-  width: 65%;
-}
+
 
 .header {
   background: variables.$color-black;
@@ -140,6 +192,11 @@ body .sobre-mi-container {
   display: inline-block;
 }
 
+.section-title:hover{
+  transition: 0.3s ease;
+  color: variables.$color-black;
+}
+
 .list-curso {
   padding: 0;
   margin: 0;
@@ -158,103 +215,59 @@ body .sobre-mi-container {
   }
 }
 
-.experience-item {
-  display: flex;
-  align-items: stretch;
-  align-content: stretch;
-  gap: 1.5rem;
-  position: relative;
-  }
-
-.section-title:hover{
-  transition: 0.3s ease;
-  color: variables.$color-black;
-}
-
-.experience-important {
-  width: 60%;
-  cursor: pointer;
-  padding: 0.4rem 0;
-}
-
-.experience-detail {
-  position: absolute;
-  top: 0;
-  right: -0;
-  width: 40%;
-
-  background: #fff;
-  color: #000;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.8rem;
-  font-size: 0.85rem;
-
-  opacity: 0;
-  transform: translateX(-10px);
-  pointer-events: none;
-  transition: all 0.3s ease;
-
-  box-shadow: 0 10px 20px rgba(0,0,0,.15);
-}
-
 .experience-item:hover .experience-detail {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
 }
 
-.block-right p,
-.block-right ul {
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
 
 .skills-main {
-   width: 100%;
-}
-
-.skills-design{
-  width: 50%;
-  list-style: none;
-  padding: 0;
-}
-
-.skills-frontend{
-  width: 50%;
-  list-style: none;
-  padding: 0;
-}
-
-.skills {
-  width: 90%;
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0rem;
-}
-.skills li {
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.skills span {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.skill-bar {
   width: 100%;
-  height: 8px;
-  background: #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-}
+  display: flex;
 
-.skill-level {
-  height: 100%;
-  background: variables.$color-alt-3;
-  border-radius: 8px;
-  transition: width 0.6s ease;
+  .skills-design,
+  .skills-frontend {
+  width: 50%;
+  padding: 0;
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .skills {
+    width: 90%;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0rem;
+  
+    li {
+      margin-bottom: 1rem;
+      font-weight: bold;
+
+        span {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 0.3rem;
+        }
+
+        .skill-bar {
+          width: 100%;
+          height: 8px;
+          background: #ddd;
+          border-radius: 8px;
+          overflow: hidden;
+
+          .skill-level {
+            height: 100%;
+            background: variables.$color-alt-3;
+            border-radius: 8px;
+            transition: width 0.6s ease;
+            }
+        }
+      }
+    }
+  }
 }
 
 .level-90 { width: 90%; }
@@ -359,7 +372,4 @@ body .sobre-mi-container {
   margin: 1.5cm;
 }
 /*AGREGAR:
-1-NAVEGADOR PARA PODER RETOMAR A LAS ANTERIORES PÁGINAS
-2-MODALES DONDE EXPLIQUEN MAS EN DETALLE LAS TAREAS REALIZADAS Y LAS COSAS
-3-ORDENAR Y REDEFINIR EL CSS PARA QUE ESTE ESCRITO IGUAL QUE EN LAS ANTERIORES PÁGINAS
-4-BUSCAR O TOMAR UNA FOTOGRAFÍA QUE SEA ACORDE PARA AGREGAR A LA ILERA IZQUIERDA */
+1- ACOMODAR LAS SECCIONES DEL COSTADO, EDUCACIÓN, DATOS PERSONALES Y CONTACTO QUE NO SE EXPRESAN COMO DEBERÍA SER. */
