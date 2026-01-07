@@ -7,66 +7,80 @@
   color: variables.$color-white;
   width: 100%;
   /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/ 
-}
-.navbar {
+
+  .navbar {
   width: 100%;
+  background-color: variables.$color-black !important;    
+    
+    .navbar-brand{
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+    }
+    
+    .navbar-toggler {
+      padding: 2px 6px;   /* achica el área clickeable */
+      transform: scale(0.9);  /* reduce el tamaño visual */
+  
+      .navbar-toggler-icon {
+        background-image: none !important;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+        span {
+          display: block;
+          width: 100%;
+          height: 2px; /* grosor */
+          background-color: rgb(77, 77, 77); /* color inicial */
+          transition: background-color 0.3s ease;
+        }
+      }
+      
+      &:hover {
+        .navbar-toggler-icon span {
+          background-color: variables.$color-alt-1;
+        }
+      }
+    }
+          
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content:"";
+        position: absolute;
+        left: 0;
+        bottom: 0px; /* separación del texto */
+        width: 0%;
+        height: 3px; /* grosor de la línea */
+        background-color: variables.$color-alt-1;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: variables.$color-alt-1;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
-.navbar-brand{
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-}
-.navbar-negro{
-  background-color: variables.$color-black !important;
-}
-.navbar-toggler {
-  padding: 2px 6px;   /* achica el área clickeable */
-  transform: scale(0.9);  /* reduce el tamaño visual */
-}
-.navbar-toggler-icon {
-  background-image: none !important;
-  width: 1.5rem;
-  height: 1.5rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.navbar-toggler-icon span {
-  display: block;
-  width: 100%;
-  height: 2px; /* grosor */
-  background-color: rgb(77, 77, 77); /* color inicial */
-  transition: background-color 0.3s ease;
-}
-.navbar-toggler:hover .navbar-toggler-icon span {
-  background-color: variables.$color-alt-1;
-}
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-.nav-link::after {
-  content:"";
-  position: absolute;
-  left: 0;
-  bottom: 0px; /* separación del texto */
-  width: 0%;
-  height: 3px; /* grosor de la línea */
-  background-color: variables.$color-alt-1;
-  transition: width 0.3s ease;
-}
-.nav-link:hover {
-  color: variables.$color-alt-1;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
+
+
+
 .header-design {
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   align-content: center;
   padding: 2rem 0.5rem 2rem 0.5rem;
 }
@@ -91,20 +105,23 @@
   font-weight: 100;
   text-justify: inter-word ;
 } /* modificar en tablet y en desktop para ajustarlos*/
+
 .imagen-design {
   /*transform: scale(1.1);*/
-  width: 90%;
+  height: 100%;
+  width: 60%;
   display: flex;
   justify-content: center; 
-  align-items: center;
-  overflow: hidden;
+  align-items: flex-end;
 }
+
 .imagen-design img {
-  width: 100%;       
-  height: auto;      
-  object-fit: cover; 
-  max-width: 50rem;
-}
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;   
+  object-fit: contain; 
+  }
 
 /*Media Cuery Tablet*/
 @media (min-width: 660px) {
@@ -129,8 +146,8 @@
   .imagen-design {
     width: 45%;
   }
-  .img-design img {
-    max-height: 60vh;
+  .imagen-design img {
+    height: 100%;
   }
   .imagen-design img:hover {
     transform: scale(1.1);
@@ -158,6 +175,7 @@
   }
   .header-design {
     padding: 0 4rem;
+    gap: 4rem;
   }
   .subtitle-design {
     font-size: 3rem;
@@ -169,5 +187,5 @@
   }
   .imagen-design {
     width: 60%;
-  }
+   }
 }
