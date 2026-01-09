@@ -5,11 +5,13 @@
 .sobre-mi{
   padding: 2rem; 
 }
+
 .sobre-mi-wrapper { /*A partir de este si se va a utilizar flexbox.*/
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
 .sobre-mi-background {
   background-color: variables.$color-alt-1;
   height: 5rem;
@@ -23,15 +25,48 @@
   border-top-right-radius: 2.5rem;
   border-bottom-right-radius: 2.5rem;
 }
+
 .sobre-mi-p {
   padding-top: 2rem;
   text-align: justify;
   text-justify: inter-word;
 }
+
+.mihistoria-background{
+  background-color: variables.$color-alt-1;
+  width: 90%;
+  height: 4rem;
+  margin: 2rem 0 2rem calc(-2rem);
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  text-align: center;
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+
 .carrousel-container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+
+    .carousel-complement {
+      width: 100%;
+      max-width: 100%;
+    }
   }
+
+  .p-short{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: xx-large;
+  }  
+  
+  .p-long {
+  display: none;
+  }
+
 .carousel-caption.custom-caption {
     background: rgba(15, 12, 12, 0.368) !important;
     backdrop-filter: blur(6px) !important;
@@ -41,20 +76,24 @@
     border: 0 solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
 .carousel-item {
     position: relative;
     overflow: hidden;
 }
+
 .custom-caption h5 {
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
 }
+
 .custom-caption p {
     font-size: 1rem;
     color: #fff;
     display: none;
 }
+
 .aside-container{
   display:none;
 }
@@ -84,27 +123,36 @@
   min-width: 35%;
   max-width: 45%;
   }
+
   .p-aside {
   text-align: justify;
   text-justify: inter-word;  
   }
-  
+
+.mihistoria-background {
+  width: 50%;
+}
+
 .carousel-container {
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     padding-top: 2rem;
-    padding-left: calc(0rem);
-    margin-right: -2rem 
   }
 
   .carousel-complement {
-  flex: 0 0 40%;
+  display:flex;
   max-width: 40%;
   color: variables.$color-alt-1;
   font-weight: 500;
   font-size: 2rem;
   }
 
+  .p-long{
+  font-size: medium;
+  text-align: justify;
+  text-justify: inter-word;
+  }
   #carouselIndex {
     flex: 0 0 60%;
     max-width: 60%;
@@ -125,3 +173,59 @@
         display: block;
   }
 }
+
+@media (min-width: 1020px) {
+  .carousel-h3{
+  display: flex;
+  padding: 2rem 0;
+  width: auto;
+  height: auto;
+}
+
+.carousel-container {
+    flex-direction: row;
+    align-items: flex-start;    
+    padding-top: 2rem;
+    margin-right: 2rem;
+  }
+
+  .p-short {
+    display: none;
+    
+  }
+
+  .p-long {
+    display: block;
+    }
+
+  .carousel-complement {
+  display:flex;
+  max-width: 40%;
+  color: variables.$color-alt-1;
+  font-weight: 500;
+  font-size: 2rem;
+  }
+  
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .carousel-caption.custom-caption {
+        padding: 10px 15px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+  }
+  
+  .custom-caption h5 {
+        font-size: 1.3rem;
+  }
+
+  .custom-caption p {
+        font-size: 0.9rem;
+        display: block;
+  }
+}
+
+
+  

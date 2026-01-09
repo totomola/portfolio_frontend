@@ -77,7 +77,7 @@
 
 
 .header-design {
-  height: calc(100vh - 80px);
+  /*height: calc(100vh - 80px);*/
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -108,8 +108,8 @@
 
 .imagen-design {
   /*transform: scale(1.1);*/
-  height: 100%;
-  width: 60%;
+  height: 60vh;
+  width: 100%;
   display: flex;
   justify-content: center; 
   align-items: flex-end;
@@ -117,8 +117,6 @@
 
 .imagen-design img {
   max-height: 100%;
-  max-width: 100%;
-  height: auto;
   width: auto;   
   object-fit: contain; 
   }
@@ -129,11 +127,12 @@
     height: 70vh;
   }*/
   .header-design {
+    min-height: calc(100vh - 80px);
     flex-direction: row;
-    padding-top: 2rem;
     align-items: center;
     gap: 2rem;
   }
+  
   .subtitle-design {
     width: 55%;
     font-size: 2.5rem;
@@ -144,7 +143,7 @@
   font-weight: 800;
   }
   .imagen-design {
-    width: 45%;
+    max-height: none;
   }
   .imagen-design img {
     height: 100%;

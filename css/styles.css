@@ -101,7 +101,7 @@ body {
 }
 
 .header-design {
-  height: calc(100vh - 80px);
+  /*height: calc(100vh - 80px);*/
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -135,8 +135,8 @@ body {
 } /* modificar en tablet y en desktop para ajustarlos*/
 .imagen-design {
   /*transform: scale(1.1);*/
-  height: 100%;
-  width: 60%;
+  height: 60vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -144,8 +144,6 @@ body {
 
 .imagen-design img {
   max-height: 100%;
-  max-width: 100%;
-  height: auto;
   width: auto;
   object-fit: contain;
 }
@@ -156,8 +154,8 @@ body {
     height: 70vh;
   }*/
   .header-design {
+    min-height: calc(100vh - 80px);
     flex-direction: row;
-    padding-top: 2rem;
     align-items: center;
     gap: 2rem;
   }
@@ -171,7 +169,7 @@ body {
     font-weight: 800;
   }
   .imagen-design {
-    width: 45%;
+    max-height: none;
   }
   .imagen-design img {
     height: 100%;
@@ -315,9 +313,38 @@ body {
   text-justify: inter-word;
 }
 
+.mihistoria-background {
+  background-color: #1A31EA;
+  width: 90%;
+  height: 4rem;
+  margin: 2rem 0 2rem -2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+
 .carrousel-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.carrousel-container .carousel-complement {
+  width: 100%;
+  max-width: 100%;
+}
+
+.p-short {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: xx-large;
+}
+
+.p-long {
+  display: none;
 }
 
 .carousel-caption.custom-caption {
@@ -380,15 +407,65 @@ body {
     text-align: justify;
     text-justify: inter-word;
   }
+  .mihistoria-background {
+    width: 50%;
+  }
   .carousel-container {
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     padding-top: 2rem;
-    padding-left: 0rem;
-    margin-right: -2rem;
   }
   .carousel-complement {
-    flex: 0 0 40%;
+    display: flex;
+    max-width: 40%;
+    color: #1A31EA;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .p-long {
+    font-size: medium;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .carousel-caption.custom-caption {
+    padding: 10px 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+  .custom-caption h5 {
+    font-size: 1.3rem;
+  }
+  .custom-caption p {
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+@media (min-width: 1020px) {
+  .carousel-h3 {
+    display: flex;
+    padding: 2rem 0;
+    width: auto;
+    height: auto;
+  }
+  .carousel-container {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2rem;
+    margin-right: 2rem;
+  }
+  .p-short {
+    display: none;
+  }
+  .p-long {
+    display: block;
+  }
+  .carousel-complement {
+    display: flex;
     max-width: 40%;
     color: #1A31EA;
     font-weight: 500;
