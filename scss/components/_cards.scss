@@ -3,26 +3,26 @@
 @use "../base/variables";
 
 .card {
-  width: 100% !important;  
+  width: 100%;  
   max-width: 18rem; /*Evita deformación en desktop*/
-  height: 18rem;
   display: flex;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  overflow: hidden;
+  /*margin-bottom: 1.5rem;*/
 
   &-img-top {
-    width: 100%;
-    height: 60%; /* Tamaño fijo */
+    height: 12.5rem; /* Tamaño fijo */
     object-fit: cover; /* Mantiene proporciones */
     border-radius: 10px 10px 0 0
   }
 
   &-body {
-    height: 40%;
+    flex: 1;
     padding: 0.6rem 0.75rem; /* cuerpo más chico */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 0.4rem;
+    gap: 0.5rem;
 
       .btn {
       padding: 0.25rem 0.6rem;
@@ -45,7 +45,7 @@
 
 /*Variables visuales de mis cards*/
 
-.glass {
+.card.glass {
     background: rgba(255, 255, 255, 0.15);  
     backdrop-filter: blur(10px);            /* Efecto vidrio */
     -webkit-backdrop-filter: blur(10px);    
