@@ -339,7 +339,7 @@ body {
 .p-short {
   text-align: justify;
   text-justify: inter-word;
-  font-size: xx-large;
+  font-size: 1.2rem;
 }
 
 .p-long {
@@ -420,10 +420,10 @@ body {
     max-width: 40%;
     color: #1A31EA;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
   .p-long {
-    font-size: medium;
+    font-size: 1.1rem;
     text-align: justify;
     text-justify: inter-word;
   }
@@ -468,7 +468,7 @@ body {
     max-width: 40%;
     color: #1A31EA;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
   }
   #carouselIndex {
     flex: 0 0 60%;
