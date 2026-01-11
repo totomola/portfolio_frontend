@@ -32,10 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  outline: 5px solid lime;
-}
-
 /* Layout */
 /* Archivo principal SASS */
 /* Base */
@@ -226,7 +222,10 @@ body {
   max-width: 90%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 .footer-icons {
   display: flex;
