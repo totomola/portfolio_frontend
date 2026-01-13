@@ -176,14 +176,27 @@
 }
 
 @media (min-width: 1020px) {
+
+  .sobre-mi-wrapper {
+    min-height: 100vh;
+    align-items: center;
+  }
+
+  .sobre-mi > section:nth-of-type(2) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
   .carousel-h3{
   display: flex;
   padding: 2rem 0;
   width: auto;
   height: auto;
-}
+  }
 
-.carousel-container {
+  .carousel-container {
     flex-direction: row;
     align-items: flex-start;    
     padding-top: 2rem;
