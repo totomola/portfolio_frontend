@@ -32,42 +32,32 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  outline: 5px solid lime;
-}
-
 /* Layout */
 /* Archivo principal SASS */
 /* Base */
 /*HEADER, a partir de aca se completan todas las clases del header*/
+/*HEADER NAVBAR*/
 .header-navbar {
   background-color: #000;
   color: #fff;
   width: 100%;
   /*height: 120vh;  Lo dejo desfijado para que no me rompa a futuro.*/
 }
-
-.navbar {
+.header-navbar .navbar {
   width: 100%;
+  background-color: #000 !important;
 }
-
-.navbar-brand {
+.header-navbar .navbar .navbar-brand {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-weight: 700;
 }
-
-.navbar-negro {
-  background-color: #000 !important;
-}
-
-.navbar-toggler {
+.header-navbar .navbar .navbar-toggler {
   padding: 2px 6px; /* achica el área clickeable */
   transform: scale(0.9); /* reduce el tamaño visual */
 }
-
-.navbar-toggler-icon {
+.header-navbar .navbar .navbar-toggler .navbar-toggler-icon {
   background-image: none !important;
   width: 1.5rem;
   height: 1.5rem;
@@ -76,25 +66,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
-.navbar-toggler-icon span {
+.header-navbar .navbar .navbar-toggler .navbar-toggler-icon span {
   display: block;
   width: 100%;
   height: 2px; /* grosor */
   background-color: rgb(77, 77, 77); /* color inicial */
   transition: background-color 0.3s ease;
 }
-
-.navbar-toggler:hover .navbar-toggler-icon span {
+.header-navbar .navbar .navbar-toggler:hover .navbar-toggler-icon span {
   background-color: #1A31EA;
 }
-
-.nav-link {
+.header-navbar .navbar .nav-link {
   position: relative;
   transition: color 0.3s ease;
 }
-
-.nav-link::after {
+.header-navbar .navbar .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -104,27 +90,24 @@ body {
   background-color: #1A31EA;
   transition: width 0.3s ease;
 }
-
-.nav-link:hover {
+.header-navbar .navbar .nav-link:hover {
   color: #1A31EA;
 }
-
-.nav-link:hover::after {
+.header-navbar .navbar .nav-link:hover::after {
   width: 100%;
 }
 
+/*HEADER DESIGN*/
 .header-design {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   align-content: center;
-  padding: 2rem 0.5rem 2rem 0.5rem;
+  padding: 2rem 0.5rem;
 }
 
 .subtitle-design {
-  flex-direction: column;
   width: 90%;
-  padding: 0;
 }
 
 .h2-title {
@@ -133,7 +116,6 @@ body {
 }
 
 .span-disign-industrial {
-  padding: 0rem;
   display: block;
   color: #1A31EA;
   font-weight: 800;
@@ -141,33 +123,30 @@ body {
 }
 
 .p-design {
-  width: 50%;
+  width: 60%;
   font-weight: 100;
-} /* modificar en tablet y en desktop para ajustarlos*/
+  text-justify: inter-word;
+}
+
 .imagen-design {
-  /*transform: scale(1.1);*/
-  width: 90%;
+  height: 60vh;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  align-items: flex-end;
 }
 
 .imagen-design img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-width: 50rem;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 /*Media Cuery Tablet*/
 @media (min-width: 660px) {
-  /*.header-navbar{
-    height: 70vh;
-  }*/
   .header-design {
+    min-height: calc(100vh - 80px);
     flex-direction: row;
-    padding-top: 2rem;
     align-items: center;
     gap: 2rem;
   }
@@ -181,14 +160,14 @@ body {
     font-weight: 800;
   }
   .imagen-design {
-    width: 45%;
+    max-height: none;
   }
-  .img-design img {
-    max-height: 60vh;
+  .imagen-design img {
+    height: 100%;
+    transition: transform 0.3s;
   }
   .imagen-design img:hover {
     transform: scale(1.1);
-    transition: transform 0.3s;
   }
 }
 /* Media Cuery Desktop */
@@ -207,13 +186,12 @@ body {
   .navbar-brand {
     position: static;
   }
-  .subtitle-design {
-    width: 40%;
-  }
   .header-design {
     padding: 0 4rem;
+    gap: 4rem;
   }
   .subtitle-design {
+    width: 40%;
     font-size: 3rem;
     font-weight: 200;
   }
@@ -233,44 +211,40 @@ body {
   background-color: #000;
   padding: 2rem 0;
 }
-
 .footer-container {
   max-width: 90%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
-
 .footer-icons {
   display: flex;
   align-items: center;
   gap: 2rem;
   color: #092CAB;
 }
-
 .footer-icons a {
   color: #1A31EA;
   font-size: 2rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .footer-icons a:hover {
   color: #fff;
   transform: scale(1.1);
   opacity: 0.8;
 }
-
 .footer-whatsapp {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #092CAB;
 }
-
 .footer-whatsapp i {
   font-size: 2rem;
 }
-
 .footer-whatsapp h5 {
   color: #fff;
   margin: 0;
@@ -331,9 +305,38 @@ body {
   text-justify: inter-word;
 }
 
+.mihistoria-background {
+  background-color: #1A31EA;
+  width: 90%;
+  height: 4rem;
+  margin: 2rem 0 2rem -2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+}
+
 .carrousel-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.carrousel-container .carousel-complement {
+  width: 100%;
+  max-width: 100%;
+}
+
+.p-short {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.2rem;
+}
+
+.p-long {
+  display: none;
 }
 
 .carousel-caption.custom-caption {
@@ -393,24 +396,93 @@ body {
     max-width: 45%;
   }
   .p-aside {
+    font-size: 0.875em;
     text-align: justify;
     text-justify: inter-word;
   }
-  .carousel-h3 {
-    max-width: 30%;
-    color: #1A31EA;
-    font-weight: 800;
-    font-size: 2rem;
+  .mihistoria-background {
+    width: 50%;
   }
-  .carrousel-container {
+  .carousel-container {
     display: flex;
     flex-direction: row;
+    gap: 2rem;
     padding-top: 2rem;
-    padding-right: -2rem;
-    padding-left: 0rem;
   }
-  .carousel #carouselindex {
-    width: 70%;
+  .carousel-complement {
+    display: flex;
+    max-width: 40%;
+    color: #1A31EA;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  .p-long {
+    font-size: 1.1rem;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .carousel-caption.custom-caption {
+    padding: 10px 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+  .custom-caption h5 {
+    font-size: 1.3rem;
+  }
+  .custom-caption p {
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+@media (min-width: 1020px) {
+  .sobre-mi-wrapper {
+    min-height: 100vh;
+    align-items: center;
+  }
+  .sobre-mi-p {
+    font-size: 2rem;
+  }
+  .p-aside {
+    font-size: 1.5rem;
+  }
+  .sobre-mi > section:nth-of-type(2) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .carousel-h3 {
+    display: flex;
+    padding: 2rem 0;
+    width: auto;
+    height: auto;
+  }
+  .carousel-container {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 2rem;
+    margin-right: 2rem;
+  }
+  .p-short {
+    display: none;
+  }
+  .p-long {
+    display: block;
+  }
+  .carousel-complement {
+    display: flex;
+    max-width: 40%;
+    color: #1A31EA;
+    font-weight: 500;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  }
+  #carouselIndex {
+    flex: 0 0 60%;
+    max-width: 60%;
   }
   .carousel-caption.custom-caption {
     padding: 10px 15px;
@@ -440,90 +512,53 @@ body .sobre-mi-container {
   max-width: 1100px; /* ancho del CV */
   margin: 4rem auto; /* CENTRADO HORIZONTAL */
   background: #fff;
+  /* ===== COLUMNA IZQUIERDA ===== */
 }
-
-/* ===== COLUMNA IZQUIERDA ===== */
 .cv-left {
   background: #4433FA;
   padding: 2rem 1.5rem;
   width: 35%;
   min-width: 280px;
+  margin-bottom: 2rem;
 }
-
-.profile {
+.cv-left .profile {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
-
-.profile img {
-  width: 4rem;
-  height: 4rem;
+.cv-left .profile img {
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   object-fit: cover;
+  transition: 0.3s ease;
+}
+.cv-left .profile img:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+.cv-right {
+  padding: 0 2rem;
+  width: 65%;
 }
 
 .block {
   margin: 0;
 }
-
 .block-title {
   background: #000;
   color: #fff;
-  padding: 1rem 0.8rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  width: 80%;
+  margin-left: -1.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 0 1.5rem 1.5rem 0;
+  transition: 0.3s ease;
 }
-
-.contact-list {
-  list-style: none;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.small-text {
-  color: #fff;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-/*..COLUMNA DERECHA..*/
-.cv-right {
-  padding: 2rem 2.5rem;
-  width: 65%;
-}
-
-.header {
-  background: #000;
-  color: #fff;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.header h1 {
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-
-.header h2 {
-  font-size: 1rem;
-  font-weight: 300;
-  margin-top: 0.3rem;
-}
-
-.block-right {
-  margin-bottom: 2rem;
-}
-
-.section-title {
-  background: #3f3f3f;
-  color: #fff;
-  display: inline-block;
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+.block-title:hover {
+  transform: translateX(6px);
+  color: #4433FA;
 }
 
 .block-right p,
@@ -532,12 +567,217 @@ body .sobre-mi-container {
   line-height: 1.6;
 }
 
-.block-right ul {
-  padding-left: 1rem;
+.experience-item {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+.experience-item .experience-important {
+  width: 60%;
+  cursor: pointer;
+}
+.experience-item .experience-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  background: #fff;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.experience-item .experience-detail ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.experience-item:hover .experience-detail {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-.skills li {
+.contact-list {
+  color: #fff;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact-list-i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.contact-list-li:hover {
+  transform: translateX(6px);
+  transition: 0.3s ease;
+  color: #fff;
+}
+
+.small-text {
+  color: #fff;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/*..COLUMNA DERECHA..*/
+.header {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header strong {
+  color: #4433FA;
+}
+
+.header h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+}
+
+.section-title {
+  /* estilos heredados visualmente de block-title */
+  color: #fff;
+  padding: 0.5rem 0 0.5rem 1rem;
+  width: 95%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: normal;
+  /* diferencias propias */
+  background: #4433FA;
+  border-radius: 1.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.section-title:hover {
+  transition: 0.3s ease;
+  color: #000;
+}
+
+.list-curso {
+  padding: 0;
+  margin: 0;
+}
+.list-curso li {
+  list-style: decimal;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.list-curso i {
+  flex-shrink: 0;
+  color: #4433FA;
+}
+
+.experience-item:hover .experience-detail {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.skills-main {
+  width: 100%;
+  display: flex;
+}
+.skills-main .skills-design,
+.skills-main .skills-frontend {
+  width: 50%;
+  padding: 0;
+}
+.skills-main .skills-design h4,
+.skills-main .skills-frontend h4 {
+  margin-bottom: 0.5rem;
+}
+.skills-main .skills-design .skills,
+.skills-main .skills-frontend .skills {
+  width: 90%;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0rem;
+}
+.skills-main .skills-design .skills li,
+.skills-main .skills-frontend .skills li {
+  margin-bottom: 1rem;
   font-weight: bold;
+}
+.skills-main .skills-design .skills li span,
+.skills-main .skills-frontend .skills li span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.skills-main .skills-design .skills li .skill-bar,
+.skills-main .skills-frontend .skills li .skill-bar {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.skills-main .skills-design .skills li .skill-bar .skill-level,
+.skills-main .skills-frontend .skills li .skill-bar .skill-level {
+  height: 100%;
+  background: #4433FA;
+  border-radius: 8px;
+  transition: width 0.6s ease;
+}
+
+.level-90 {
+  width: 90%;
+}
+
+.level-80 {
+  width: 80%;
+}
+
+.level-70 {
+  width: 70%;
+}
+
+.level-60 {
+  width: 60%;
+}
+
+.level-50 {
+  width: 50%;
+}
+
+.level-40 {
+  width: 40%;
+}
+
+.level-30 {
+  width: 30%;
+}
+
+.level-20 {
+  width: 20%;
+}
+
+.level-10 {
+  width: 10%;
 }
 
 .date {
@@ -553,6 +793,22 @@ body .sobre-mi-container {
   }
   .cv-left,
   .cv-right {
+    width: 100%;
+  }
+  .header {
+    width: 90%;
+  }
+  .experience-detail {
+    display: none;
+  }
+}
+@media (min-width: 660px) {
+  .section-title {
+    width: 80%;
+  }
+  .skills-main {
+    display: flex;
+    flex: column;
     width: 100%;
   }
 }
@@ -613,10 +869,7 @@ body .sobre-mi-container {
   margin: 1.5cm;
 }
 /*AGREGAR:
-1-NAVEGADOR PARA PODER RETOMAR A LAS ANTERIORES PÁGINAS
-2-MODALES DONDE EXPLIQUEN MAS EN DETALLE LAS TAREAS REALIZADAS Y LAS COSAS
-3-ORDENAR Y REDEFINIR EL CSS PARA QUE ESTE ESCRITO IGUAL QUE EN LAS ANTERIORES PÁGINAS
-4-BUSCAR O TOMAR UNA FOTOGRAFÍA QUE SEA ACORDE PARA AGREGAR A LA ILERA IZQUIERDA */
+1- ACOMODAR LAS SECCIONES DEL COSTADO, EDUCACIÓN, DATOS PERSONALES Y CONTACTO QUE NO SE EXPRESAN COMO DEBERÍA SER. */
 /* Archivo principal SASS */
 /* Base */
 /* ======!DOCUMENTO MIS-TRABAJOS!======*/
@@ -804,47 +1057,42 @@ TAREAS QUE FALTAN
 /* Archivo principal SASS */
 /* Base */
 .card {
-  width: 100% !important;
-  max-width: 22rem; /*Evita deformación en desktop*/
-  height: 22rem;
-  display: flex;
-  margin-bottom: 1.5rem;
-}
-
-.card-img-top {
   width: 100%;
-  height: 60%; /* Tamaño fijo */
+  max-width: 18rem; /*Evita deformación en desktop*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /*margin-bottom: 1.5rem;*/
+}
+.card-img-top {
+  height: 12.5rem; /* Tamaño fijo */
   object-fit: cover; /* Mantiene proporciones */
   border-radius: 10px 10px 0 0;
 }
-
 .card-body {
-  height: 40%;
+  flex: 1;
   padding: 0.6rem 0.75rem; /* cuerpo más chico */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
-
+.card-body .btn {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+}
 .card-title {
   font-size: 0.9rem !important;
   margin-bottom: 0.1rem;
 }
-
 .card-text {
   font-size: 0.75rem !important;
   line-height: 1.2;
   margin-bottom: 0.1rem;
 }
 
-.card-body .btn {
-  padding: 0.25rem 0.6rem;
-  font-size: 0.75rem;
-}
-
 /*Variables visuales de mis cards*/
-.glass {
+.card.glass {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px); /* Efecto vidrio */
   -webkit-backdrop-filter: blur(10px);
@@ -908,4 +1156,4 @@ TAREAS QUE FALTAN
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */
