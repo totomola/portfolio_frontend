@@ -278,28 +278,11 @@ body {
 .sobre-mi {
   padding: 2rem;
 }
-
 .sobre-mi-wrapper { /*A partir de este si se va a utilizar flexbox.*/
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-
-.img-sobre-mi {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.img-singular {
-  width: 12rem;
-  height: 12rem;
-  object-fit: contain;
-  display: block;
-}
-
 .sobre-mi-background {
   background-color: #1A31EA;
   height: 5rem;
@@ -313,11 +296,24 @@ body {
   border-top-right-radius: 2.5rem;
   border-bottom-right-radius: 2.5rem;
 }
-
 .sobre-mi-p {
   padding-top: 2rem;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.img-sobre-mi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.img-sobre-mi .img-singular {
+  width: 12rem;
+  height: 12rem;
+  object-fit: contain;
+  display: block;
 }
 
 .mihistoria-background {
@@ -344,14 +340,9 @@ body {
   max-width: 100%;
 }
 
-.p-short {
-  text-align: justify;
-  text-justify: inter-word;
-  font-size: 1.2rem;
-}
-
-.p-long {
-  display: none;
+.carousel-item {
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-caption.custom-caption {
@@ -363,21 +354,24 @@ body {
   border: 0 solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
-
-.carousel-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.custom-caption h5 {
+.carousel-caption.custom-caption h5 {
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
 }
-
-.custom-caption p {
+.carousel-caption.custom-caption p {
   font-size: 1rem;
   color: #fff;
+  display: none;
+}
+
+.p-short {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.2rem;
+}
+
+.p-long {
   display: none;
 }
 
@@ -387,7 +381,6 @@ body {
 
 @media (min-width: 660px) {
   .sobre-mi-wrapper {
-    display: flex;
     flex-direction: row; /* Con estopuedo poner el Aside al costado! */
     align-items: flex-start;
     gap: 2rem;
@@ -397,12 +390,9 @@ body {
     min-width: 55%;
   }
   .img-sobre-mi {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: row;
   }
-  .img-singular {
+  .img-sobre-mi .img-singular {
     width: 9rem;
     height: 9rem;
     object-fit: contain;
@@ -411,8 +401,6 @@ body {
   .aside-container {
     display: block;
     width: 30%;
-  }
-  .aside-container {
     background-color: #092CAB;
     padding: 2rem;
     margin-right: -2rem;
@@ -457,10 +445,10 @@ body {
     border-radius: 12px;
     backdrop-filter: blur(10px);
   }
-  .custom-caption h5 {
+  .carousel-caption.custom-caption h5 {
     font-size: 1.3rem;
   }
-  .custom-caption p {
+  .carousel-caption.custom-caption p {
     font-size: 0.9rem;
     display: block;
   }
@@ -470,11 +458,9 @@ body {
     min-height: 100vh;
     align-items: center;
   }
-  .img-singular {
+  .img-sobre-mi .img-singular {
     width: 17rem;
     height: 17rem;
-    object-fit: contain;
-    display: block;
   }
   .sobre-mi-p {
     font-size: 2rem;
@@ -491,14 +477,10 @@ body {
   .carousel-h3 {
     display: flex;
     padding: 2rem 0;
-    width: auto;
-    height: auto;
   }
   .carousel-container {
     flex-direction: row;
     align-items: flex-start;
-    padding-top: 2rem;
-    margin-right: 2rem;
   }
   .p-short {
     display: none;
@@ -507,27 +489,7 @@ body {
     display: block;
   }
   .carousel-complement {
-    display: flex;
-    max-width: 40%;
-    color: #1A31EA;
-    font-weight: 500;
     font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-  }
-  #carouselIndex {
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
-  .carousel-caption.custom-caption {
-    padding: 10px 15px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-  }
-  .custom-caption h5 {
-    font-size: 1.3rem;
-  }
-  .custom-caption p {
-    font-size: 0.9rem;
-    display: block;
   }
 }
 /* Archivo principal SASS */
