@@ -127,10 +127,12 @@
 
   .img-sobre-mi {
     flex-direction: row;
+    width: 100%;
   
     .img-singular {
-      width: 9rem;
-      height: 9rem;
+      flex: 1 1 33.333%;
+      max-width: 33.333%;
+      height: auto;
       object-fit: contain;
       display: block;
     }
@@ -208,13 +210,8 @@
     align-items: center;
   }
 
-  .img-sobre-mi .img-singular {
-    width: 17rem;
-    height: 17rem;    
-  }  
-
   .sobre-mi-p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .p-aside {
@@ -245,6 +242,7 @@
 
   .p-long {
     display: block;
+    font-size: 1.3rem;
     }
 
   .carousel-complement {
