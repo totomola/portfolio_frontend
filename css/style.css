@@ -872,7 +872,7 @@ body .sobre-mi-container {
 }
 
 .section-mis-trabajos {
-  background-color: #092CAB;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -880,14 +880,22 @@ body .sobre-mi-container {
   gap: 0;
 }
 
-.h2-mis-proyectos {
+.mis-proyectos-h2 {
+  text-align: center;
   color: #fff;
   font-size: 3rem;
   font-weight: 900;
 }
 
-.h2-mis-proyectos span {
-  color: #968DFC;
+.mis-proyectos-h2 span {
+  color: #092CAB;
+  padding-left: 0.5rem;
+}
+
+.mis-proyectos-p {
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 0 2rem;
 }
 
 .marke7wrapper {
@@ -994,7 +1002,8 @@ body .sobre-mi-container {
     grid-area: 2/4/4/5;
   }
   .imag-14 {
-    aspect-ratio: 2/4;
+    aspect-ratio: auto;
+    height: 100%;
   }
   .imag-9,
   .imag-10 {

@@ -6,18 +6,31 @@
 .header-mis-trabajos {
 background-color: variables.$color-white;
 }
+
 .section-mis-trabajos {
-background-color: variables.$color-alt-2;
+background-color: variables.$color-black;
 @include m.flex-center(column);
 }
-.h2-mis-proyectos {
+
+.mis-proyectos-h2 {
+  text-align: center;
   color: variables.$color-white;
   font-size: 3rem;
   font-weight: 900;
 }
-.h2-mis-proyectos span {
-color: #968DFC;
+
+.mis-proyectos-h2 span {
+color: variables.$color-alt-2;
+padding-left: 0.5rem;
 }
+
+.mis-proyectos-p{
+  color: variables.$color-white;
+  font-size: 1.6rem;
+  padding: 0 2rem;
+
+}
+
 .marke7wrapper {
   width: 100%;
   @include m.flex-center(column);
@@ -51,6 +64,7 @@ color: #968DFC;
     margin: 0 auto;
     margin-bottom: 2rem;
   }
+
   .parent {
   width: 95vw;  
   display: grid;
@@ -58,11 +72,13 @@ color: #968DFC;
   grid-auto-rows: minmax(180px, auto);
   gap: 2rem;
   }
+
   .grid-item {
   overflow: hidden;
   border-radius: 14px;
   aspect-ratio: 1 / 1;
   }
+
   .grid-item img {
   width: 100%;
   height: 100%;
@@ -91,7 +107,8 @@ color: #968DFC;
  .imag-14 { grid-area: 2 / 4 / 4 / 5; }
 
  .imag-14 {
-  aspect-ratio: 2 / 4;
+  aspect-ratio: auto;
+  height: 100%;
  }
 
 .imag-9,
