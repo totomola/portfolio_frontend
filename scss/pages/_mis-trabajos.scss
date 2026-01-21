@@ -17,6 +17,7 @@ background-color: variables.$color-black;
   color: variables.$color-white;
   font-size: 3rem;
   font-weight: 900;
+  padding-top: 2rem;
 }
 
 .mis-proyectos-h2 span {
@@ -28,7 +29,8 @@ padding-left: 0.5rem;
   color: variables.$color-white;
   font-size: 1.6rem;
   padding: 0 2rem;
-
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .marke7wrapper {
@@ -155,14 +157,4 @@ padding-left: 0.5rem;
   cursor: pointer;
 }
 }
-
-
-/*
-TAREAS QUE FALTAN
-1-
-2-
-3-
-4-
-5-
-*/
 
